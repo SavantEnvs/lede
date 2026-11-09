@@ -1,0 +1,10 @@
+project: savantenvs/lede
+target: fuzz_fritz_tffs_read
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_fritz_tffs_read/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_fritz_tffs_read
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_fritz_tffs_read/fuzz_fritz_tffs_read.dict
+    timeout: 30
