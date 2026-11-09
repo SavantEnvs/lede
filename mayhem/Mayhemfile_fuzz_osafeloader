@@ -1,0 +1,9 @@
+project: savantenvs/lede
+target: fuzz_osafeloader
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_osafeloader/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_osafeloader
+    libfuzzer: true
+    timeout: 30
